@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Reachy Simu</title>
+    <meta name="description" content="The HTML5 Herald" />
+    <meta name="author" content="SitePoint" />
+  </head>
+
+  <body>
+    <h1 id="reachy">Hello ...</h1>
+
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = () => {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+          document.getElementById("reachy").innerHTML = `Hello ${xhttp.responseText}`;
+        }
+      };
+      xhttp.open("GET", "http://127.0.0.1:8888/reachy", true);
+      xhttp.send();
+    </script>
+  </body>
+</html>
